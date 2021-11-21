@@ -22,5 +22,11 @@ class ContatosController extends Controller
     
         return "Contato armazenado com sucesso!";
     }
+
+    function show()
+    {
+        $data = Contato::all();
+        return view('admin.dashboard',['contatos'=>$data]);
+    }
 }
 

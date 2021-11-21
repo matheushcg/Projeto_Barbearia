@@ -34,8 +34,12 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Cadastre-se</button>
+          <button type="button" class="btn btn-outline-light me-2">
+            <a href="/admin/login" style="color:inherit">Login</a>
+          </button>
+          <button type="button" class="btn btn-warning">
+          <a href="/register" style="color:inherit">Cadastre-se</a>
+          </button>
         </div>
       </div>
     </div>

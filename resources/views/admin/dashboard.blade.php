@@ -7,8 +7,9 @@
     <title>Barbearia na Régua</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/headers/">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
     <link href="http://127.0.0.1:8000/style.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     
 </head>
 <body>
@@ -17,16 +18,16 @@
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src ="img/logo.png">
+          <img src ="/img/logo.png">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-white">Home</a></li>
-          <li><a href="servicos" class="nav-link px-2 text-white">Serviços</a></li>
-          <li><a href="cortes" class="nav-link px-2 text-white">Cortes</a></li>
-          <li><a href="barba" class="nav-link px-2 text-white">Barba</a></li>
-          <li><a href="quem_somos" class="nav-link px-2 text-white">Quem Somos</a></li>
-          <li><a href="contato" class="nav-link px-2 text-white">Contato</a></li>
+          <li><a href="/servicos" class="nav-link px-2 text-white">Serviços</a></li>
+          <li><a href="/cortes" class="nav-link px-2 text-white">Cortes</a></li>
+          <li><a href="/barba" class="nav-link px-2 text-white">Barba</a></li>
+          <li><a href="/quem_somos" class="nav-link px-2 text-white">Quem Somos</a></li>
+          <li><a href="/contato" class="nav-link px-2 text-white">Contato</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
@@ -45,6 +46,32 @@
     </div>
   </header>
 
+  <div class="container">
+  <div class="formulario">
+    <h1>Paínel de Administrador</h1>
+    <hr>
+    <br>
+    <h1>Lista de Contatos realizados:</h1>
+    <table border="1" style="width:100%">
+    <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Mensagem</th>
+    </tr>
+    @foreach($contatos as $contato)
+    <tr>
+        <td>{{$contato['id']}}</td>
+        <td>{{$contato['nome']}}</td>
+        <td>{{$contato['email']}}</td>
+        <td>{{$contato['mensagem']}}</td>
+    </tr>
+    @endforeach
+    </table>
+    <br>
+    <a href="{{url('admin/logout')}}">Logout</a>
+  </div>
+  </div>
   <footer class="container">
     <p>&copy; <?= date('Y') ?> - Na Régua Barbearia.</p>
   </footer>
@@ -56,3 +83,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
